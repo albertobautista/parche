@@ -1,10 +1,15 @@
-// Opening film and lookbook. Placeholders until the real video and photographs arrive:
-// put the files in /public (e.g. /public/film.mp4, /public/img/gallery-1.jpg) and update the paths.
+// Opening film: the browser plays the first source it supports. The MP4 (H.264) is the
+// web version of the original home.MOV (HEVC), which stays as a fallback.
 export const FILM = {
-  src: "/film.mp4",
-  poster: "/img/placeholder/film-poster.svg",
+  sources: [
+    { src: "/videos/home.mp4", type: "video/mp4" },
+    { src: "/videos/home.MOV", type: "video/quicktime" },
+  ],
+  poster: "/img/film-poster.jpg",
 };
 
+// Lookbook. Placeholders until the real photographs arrive: put the files in /public
+// (e.g. /public/img/gallery-1.jpg) and update the paths.
 export const GALLERY = [
   { src: "/img/placeholder/gallery-1.svg", alt: "Parché Studio cropped jacket with a monogram patch, worn with zebra trousers" },
   { src: "/img/placeholder/gallery-2.svg", alt: "Parché Studio check blazer with a monogram patch, worn on a Madrid street" },
