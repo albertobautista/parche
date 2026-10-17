@@ -18,7 +18,9 @@ export default function Film() {
   return (
     <section className="film" aria-label="Parché Studio, Collection N°01">
       <video ref={video} autoPlay muted loop playsInline preload="auto" poster={FILM.poster} aria-hidden="true">
-        <source src={FILM.src} type="video/mp4" />
+        {FILM.sources.map((s) => (
+          <source key={s.src} src={s.src} type={s.type} />
+        ))}
       </video>
       <div className="over">
         <div className="wrap">
