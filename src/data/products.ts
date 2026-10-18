@@ -1,5 +1,6 @@
 // Edit here: which photo shows which piece.
 // Photographs live in /public/img; img is the main shot and img2 the second view.
+// The reservation email uses a light JPEG of the main shot at /public/img/email/<id>.jpg.
 export type Product = {
   id: string;
   name: string;
