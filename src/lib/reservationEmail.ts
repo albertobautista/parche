@@ -26,7 +26,8 @@ export function reservationEmail({
 }: {
   product: Product;
   email: string;
-  // Public origin of the site; product photo is shown only when it is reachable over https.
+  // Public origin of the site; the photo (public/img/email/<id>.jpg, a light JPEG every
+  // mail client can show) is included only when that origin is https.
   siteUrl?: string;
   date?: Date;
 }) {
@@ -36,7 +37,7 @@ export function reservationEmail({
     `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(`Tu reserva de ${product.name} · Parché Studio`)}`,
   );
   const when = escapeHtml(formatDate(date));
-  const img = siteUrl?.startsWith("https://") ? escapeHtml(new URL(product.img, siteUrl).href) : "";
+  const img = siteUrl?.startsWith("https://") ? escapeHtml(new URL(`/img/email/${product.id}.jpg`, siteUrl).href) : "";
 
   const subject = `Nueva reserva: ${product.name}`;
 
