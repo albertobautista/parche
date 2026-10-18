@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server";
 import { findProduct } from "@/data/products";
+import { reservationEmail } from "@/lib/reservationEmail";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-function escapeHtml(s: string) {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
-}
 
 // Sends one email per reservation to RESERVATION_TO_EMAIL with the article and the customer's email.
 export async function POST(req: Request) {
@@ -33,6 +30,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "not_configured" }, { status: 503 });
   }
 
+  // Absolute origin for the product photo; the production domain avoids Vercel's preview protection.
+  const prod = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  const siteUrl = process.env.SITE_URL || (prod ? `https://${prod}` : new URL(req.url).origin);
+  const { subject, text, html } = reservationEmail({ product, email, siteUrl });
+
   let res: Response;
   try {
     res = await fetch("https://api.resend.com/emails", {
@@ -42,9 +44,9 @@ export async function POST(req: Request) {
         from,
         to: to.split(",").map((s) => s.trim()),
         reply_to: email,
-        subject: `Nueva reserva: ${product.name}`,
-        text: `Artículo: ${product.name}\nCorreo: ${email}`,
-        html: `<p><strong>Artículo:</strong> ${escapeHtml(product.name)}</p><p><strong>Correo:</strong> ${escapeHtml(email)}</p>`,
+        subject,
+        text,
+        html,
       }),
     });
   } catch (err) {
