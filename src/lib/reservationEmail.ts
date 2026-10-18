@@ -15,7 +15,7 @@ function escapeHtml(s: string) {
 }
 
 function formatDate(d: Date) {
-  return new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeStyle: "short", timeZone: "Europe/Madrid" }).format(d);
+  return new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeZone: "Europe/Madrid" }).format(d);
 }
 
 export function reservationEmail({
