@@ -8,7 +8,7 @@ export const FILM = {
   poster: "/img/film-poster.jpg",
 };
 
-// Lookbook photographs, in /public/img.
+// Lookbook photographs, in /public/img. Portrait shots are 1200x1800; set landscape: true for 1800x1200.
 export const GALLERY = [
   {
     src: "/img/gallery-1.webp",
@@ -24,6 +24,7 @@ export const GALLERY = [
   },
   {
     src: "/img/gallery-4.webp",
+    landscape: true,
     alt: "Parché Studio dark blazer with a pink silk patch",
   },
   {
