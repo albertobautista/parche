@@ -8,15 +8,66 @@ export const FILM = {
   poster: "/img/film-poster.jpg",
 };
 
-// Lookbook. Placeholders until the real photographs arrive: put the files in /public
-// (e.g. /public/img/gallery-1.jpg) and update the paths.
+// Lookbook photographs, in /public/img.
 export const GALLERY = [
-  { src: "/img/placeholder/gallery-1.svg", alt: "Parché Studio cropped jacket with a monogram patch, worn with zebra trousers" },
-  { src: "/img/placeholder/gallery-2.svg", alt: "Parché Studio check blazer with a monogram patch, worn on a Madrid street" },
-  { src: "/img/placeholder/gallery-3.svg", alt: "Parché Studio jeans with the red embroidered logo, worn seated on a Madrid kerb" },
-  { src: "/img/placeholder/gallery-4.svg", alt: "Parché Studio dark blazer with a pink silk patch" },
-  { src: "/img/placeholder/gallery-5.svg", alt: "Parché Studio black blazer with a white monogram patch, worn with embroidered jeans" },
-  { src: "/img/placeholder/gallery-6.svg", alt: "Parché Studio white jeans with monogram patch pockets and red embroidery" },
-  { src: "/img/placeholder/gallery-7.svg", alt: "Parché Studio jeans with purple monogram patch pockets, worn on a Madrid street" },
-  { src: "/img/placeholder/gallery-8.svg", alt: "Parché Studio navy blazer with a burgundy monogram patch, worn with white trousers" },
+  {
+    src: "/img/gallery-1.webp",
+    alt: "Parché Studio cropped jacket with a monogram patch, worn with zebra trousers",
+  },
+  {
+    src: "/img/gallery-2.webp",
+    alt: "Parché Studio check blazer with a monogram patch, worn on a Madrid street",
+  },
+  {
+    src: "/img/gallery-3.webp",
+    alt: "Parché Studio jeans with the red embroidered logo, worn seated on a Madrid kerb",
+  },
+  {
+    src: "/img/gallery-4.webp",
+    alt: "Parché Studio dark blazer with a pink silk patch",
+  },
+  {
+    src: "/img/gallery-5.webp",
+    alt: "Parché Studio black blazer with a white monogram patch, worn with embroidered jeans",
+  },
+  {
+    src: "/img/gallery-6.webp",
+    alt: "Parché Studio white jeans with monogram patch pockets and red embroidery",
+  },
+  {
+    src: "/img/gallery-7.webp",
+    alt: "Parché Studio jeans with purple monogram patch pockets, worn on a Madrid street",
+  },
+  {
+    src: "/img/gallery-8.webp",
+    alt: "Parché Studio navy blazer with a burgundy monogram patch, worn with white trousers",
+  },
+  {
+    src: "/img/gallery-9.webp",
+    alt: "Parché Studio black blazer with a white monogram patch, worn with embroidered jeans",
+  },
+  {
+    src: "/img/gallery-10.webp",
+    alt: "Parché Studio white jeans with monogram patch pockets and red embroidery",
+  },
+  {
+    src: "/img/gallery-11.webp",
+    alt: "Parché Studio jeans with purple monogram patch pockets, worn on a Madrid street",
+  },
+  {
+    src: "/img/gallery-12.webp",
+    alt: "Parché Studio navy blazer with a burgundy monogram patch, worn with white trousers",
+  },
+  {
+    src: "/img/gallery-13.webp",
+    alt: "Parché Studio black trousers with a white monogram patch, worn with a navy blazer",
+  },
+  {
+    src: "/img/gallery-14.webp",
+    alt: "Parché Studio white jeans with monogram patch pockets and red embroidery",
+  },
+  {
+    src: "/img/gallery-15.webp",
+    alt: "Parché Studio jeans with purple monogram patch pockets, worn on a Madrid street",
+  },
 ];
