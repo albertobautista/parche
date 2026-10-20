@@ -14,7 +14,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "walk-away",
     name: "Walk Away",
-    price: 270,
+    price: 285,
     img: "/img/walk-away-1.webp",
     img2: "/img/walk-away-2.webp",
     desc: "A long blazer with a patch at the front, and a column of silk patches running the full length of the back.",
@@ -22,7 +22,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "front-row",
     name: "Front Row",
-    price: 180,
+    price: 195,
     img: "/img/front-row-1.webp",
     img2: "/img/front-row-2.webp",
     desc: "An oversized blazer with a single patch over the chest.",
@@ -30,7 +30,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "short-notice",
     name: "Short Notice",
-    price: 180,
+    price: 195,
     img: "/img/short-notice-1.webp",
     img2: "/img/short-notice-2.webp",
     desc: "A cropped blazer with one patch set at the chest.",
@@ -38,7 +38,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "two-faced",
     name: "Two Faced",
-    price: 150,
+    price: 165,
     img: "/img/two-faced-1.webp",
     img2: "/img/two-faced-2.webp",
     desc: "Denim with both back pockets patched, and a line embroidered in red at the waist.",
@@ -46,7 +46,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "talk-back",
     name: "Talk Back",
-    price: 135,
+    price: 145,
     img: "/img/talk-back-1.webp",
     img2: "/img/talk-back-2.webp",
     desc: "Denim with one patched back pocket, and a line embroidered in red at the waist.",
