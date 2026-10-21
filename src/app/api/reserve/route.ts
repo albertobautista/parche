@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { NextResponse } from "next/server";
 import { findProduct } from "@/data/products";
 import { reservationEmail } from "@/lib/reservationEmail";
@@ -30,10 +32,22 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "not_configured" }, { status: 503 });
   }
 
-  // Absolute origin for the product photo; the production domain avoids Vercel's preview protection.
-  const prod = process.env.VERCEL_PROJECT_PRODUCTION_URL;
-  const siteUrl = process.env.SITE_URL || (prod ? `https://${prod}` : new URL(req.url).origin);
-  const { subject, text, html } = reservationEmail({ product, email, siteUrl });
+  // The product photo travels inside the email as an inline attachment, so it shows even when the
+  // mail client can't fetch it from the site. If the file can't be read, fall back to its public URL.
+  const attachments: { filename: string; content: string; content_id: string }[] = [];
+  let imageSrc: string | undefined;
+  const photo = `${product.id}.jpg`;
+  try {
+    const content = await readFile(path.join(process.cwd(), "public/img/email", photo));
+    attachments.push({ filename: photo, content: content.toString("base64"), content_id: product.id });
+    imageSrc = `cid:${product.id}`;
+  } catch (err) {
+    console.error("Reservation photo not readable, using its URL", err);
+    const prod = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+    const siteUrl = process.env.SITE_URL || (prod ? `https://${prod}` : new URL(req.url).origin);
+    if (siteUrl.startsWith("https://")) imageSrc = new URL(`/img/email/${photo}`, siteUrl).href;
+  }
+  const { subject, text, html } = reservationEmail({ product, email, imageSrc });
 
   let res: Response;
   try {
@@ -47,6 +61,7 @@ export async function POST(req: Request) {
         subject,
         text,
         html,
+        attachments,
       }),
     });
   } catch (err) {

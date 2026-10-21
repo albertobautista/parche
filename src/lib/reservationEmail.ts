@@ -21,14 +21,14 @@ function formatDate(d: Date) {
 export function reservationEmail({
   product,
   email,
-  siteUrl,
+  imageSrc,
   date = new Date(),
 }: {
   product: Product;
   email: string;
-  // Public origin of the site; the photo (public/img/email/<id>.jpg, a light JPEG every
-  // mail client can show) is included only when that origin is https.
-  siteUrl?: string;
+  // Photo of the piece (public/img/email/<id>.jpg, a light JPEG every mail client can show):
+  // a cid: reference to the inline attachment, or an https URL. Left out when neither is available.
+  imageSrc?: string;
   date?: Date;
 }) {
   const name = escapeHtml(product.name);
@@ -37,7 +37,7 @@ export function reservationEmail({
     `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(`Tu reserva de ${product.name} · Parché Studio`)}`,
   );
   const when = escapeHtml(formatDate(date));
-  const img = siteUrl?.startsWith("https://") ? escapeHtml(new URL(`/img/email/${product.id}.jpg`, siteUrl).href) : "";
+  const img = imageSrc ? escapeHtml(imageSrc) : "";
 
   const subject = `Nueva reserva: ${product.name}`;
 
