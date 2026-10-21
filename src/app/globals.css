@@ -122,6 +122,8 @@ footer .wrap { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
 footer .logo { align-items: flex-start; }
 footer .logo i { padding-left: 0; }
 footer h4 { margin: 0 0 12px; font-weight: 400; opacity: .7; }
+footer a { text-decoration: none; border-bottom: 1px solid rgba(242,240,235,.4); padding-bottom: 2px; }
+footer a:hover { border-bottom-color: currentColor; }
 footer p { margin: 0; font-size: 13.5px; opacity: .8; max-width: 34ch; }
 footer .legal { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; border-top: 1px solid rgba(242,240,235,.16); padding-top: 24px; margin-top: 40px; opacity: .6; }
 @media (max-width: 760px) { footer .wrap { grid-template-columns: 1fr; } .top .wrap { grid-template-columns: 1fr auto; } .top nav:first-child { display: none; } }

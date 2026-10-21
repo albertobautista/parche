@@ -19,7 +19,15 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="label">Correspondence</h4>
-          <p>Instagram coming soon</p>
+          <p>
+            <a
+              href="https://www.instagram.com/parche_studio_/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram @parche_studio_
+            </a>
+          </p>
         </div>
         <div className="legal label">
           <span>© 2026 Parché Studio</span>
