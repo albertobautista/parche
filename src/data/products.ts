@@ -1,5 +1,6 @@
 // Edit here: which photo shows which piece.
 // Photographs live in /public/img; img is the main shot and img2 the second view.
+// The first two pieces sit large at the top of One of One; the rest follow below.
 // The reservation email uses a light JPEG of the main shot at /public/img/email/<id>.jpg.
 export type Product = {
   id: string;
@@ -20,20 +21,20 @@ export const PRODUCTS: Product[] = [
     desc: "A long blazer with a patch at the front, and a column of silk patches running the full length of the back.",
   },
   {
-    id: "front-row",
-    name: "Front Row",
-    price: 195,
-    img: "/img/front-row-1.webp",
-    img2: "/img/front-row-2.webp",
-    desc: "An oversized blazer with a single patch over the chest.",
-  },
-  {
     id: "short-notice",
     name: "Short Notice",
     price: 195,
     img: "/img/short-notice-1.webp",
     img2: "/img/short-notice-2.webp",
     desc: "A cropped blazer with one patch set at the chest.",
+  },
+  {
+    id: "front-row",
+    name: "Front Row",
+    price: 195,
+    img: "/img/front-row-1.webp",
+    img2: "/img/front-row-2.webp",
+    desc: "An oversized blazer with a single patch over the chest.",
   },
   {
     id: "two-faced",
