@@ -12,9 +12,9 @@ export default function Edit() {
           </div>
           <p>
             Each name below is a fit: the garment, and the way its patch is
-            placed. The print changes with every piece of garment. Leave your
-            email beneath the fit you want, and receive the catalogue of every
-            piece available in it, before anyone else.
+            placed. The print changes with every piece, and each one is made
+            once. Leave your email beneath the fit you want, and receive the
+            catalogue of every piece available in it, before anyone else.
           </p>
         </div>
         <div className="grid" id="spread">
