@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cedarville_Cursive, Jost } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const jost = Jost({
@@ -66,7 +67,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${jost.variable} ${cedarville.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
