@@ -23,11 +23,6 @@ export const GALLERY = [
     alt: "Parché Studio jeans with the red embroidered logo, worn seated on a Madrid kerb",
   },
   {
-    src: "/img/gallery-4.webp",
-    landscape: true,
-    alt: "Parché Studio dark blazer with a pink silk patch",
-  },
-  {
     src: "/img/gallery-5.webp",
     alt: "Parché Studio black blazer with a white monogram patch, worn with embroidered jeans",
   },
