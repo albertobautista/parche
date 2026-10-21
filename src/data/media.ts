@@ -9,7 +9,7 @@ export const FILM = {
 };
 
 // Lookbook photographs, in /public/img. Portrait shots are 1200x1800; set landscape: true for 1800x1200.
-export const GALLERY = [
+export const GALLERY: { src: string; alt: string; landscape?: boolean }[] = [
   {
     src: "/img/gallery-1.webp",
     alt: "Parché Studio cropped jacket with a monogram patch, worn with zebra trousers",
