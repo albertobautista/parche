@@ -14,8 +14,11 @@ function escapeHtml(s: string) {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 }
 
+// The date is shown in the studio's time zone, not the server's (Vercel runs in UTC).
+const TIME_ZONE = process.env.RESERVATION_TIME_ZONE || "America/Mexico_City";
+
 function formatDate(d: Date) {
-  return new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeZone: "Europe/Madrid" }).format(d);
+  return new Intl.DateTimeFormat("es-ES", { dateStyle: "long", timeZone: TIME_ZONE }).format(d);
 }
 
 export function reservationEmail({
