@@ -11,8 +11,9 @@ export default function Edit() {
             <h2>One of One</h2>
           </div>
           <p>
-            Each name below is a fit: the garment, and the way its patch is placed. The print changes with every piece,
-            and each one is made once. Leave your email beneath the fit you want, and receive the catalogue of every
+            Each name below is a fit: the garment, and the way its patch is
+            placed. The print changes with every piece of garment. Leave your
+            email beneath the fit you want, and receive the catalogue of every
             piece available in it, before anyone else.
           </p>
         </div>
@@ -20,8 +21,20 @@ export default function Edit() {
           {PRODUCTS.map((p) => (
             <article className="look" key={p.id}>
               <figure>
-                <img src={p.img} alt={`${p.name} by Parché Studio, worn on the street`} loading="lazy" />
-                {p.img2 && <img className="alt" src={p.img2} alt="" aria-hidden="true" loading="lazy" />}
+                <img
+                  src={p.img}
+                  alt={`${p.name} by Parché Studio, worn on the street`}
+                  loading="lazy"
+                />
+                {p.img2 && (
+                  <img
+                    className="alt"
+                    src={p.img2}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                )}
               </figure>
               <div className="cap">
                 <h3 className="label">{p.name}</h3>
