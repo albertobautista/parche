@@ -26,12 +26,17 @@ Sin `RESEND_API_KEY` o `RESERVATION_TO_EMAIL` el formulario muestra "Reservation
 
 ## Imágenes y video
 
-Ahora son placeholders en `public/img/placeholder/`. Para poner los reales:
-
 - Productos (nombre, precio, descripción, foto y foto al pasar el ratón): `src/data/products.ts`
-- Video de portada, póster y fotos del carrusel: `src/data/media.ts`
+- Video de portada y póster: `src/data/media.ts`
 
-Copia los archivos a `public/` (p. ej. `public/film.mp4`, `public/img/gallery-1.jpg`) y actualiza las rutas.
+## Galería (lookbook)
+
+1. Pon todas las fotos originales en `gallery-source/` (no se suben a git).
+2. Corre `npm run gallery`: borra la galería anterior, convierte cada foto a WebP de 1800 px,
+   las renombra `gallery-1.webp`, `gallery-2.webp`… en `public/img/gallery/` y regenera `src/data/gallery.generated.json`.
+3. Sube a git `public/img/gallery/` y `src/data/gallery.generated.json`.
+
+La web baraja las fotos en cada visita. Detalles (texto alternativo, fotos HEIC) en `gallery-source/README.md`.
 
 ## Estructura
 

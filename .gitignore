@@ -5,3 +5,8 @@ out
 .env
 next-env.d.ts
 *.tsbuildinfo
+
+# Original gallery photos are heavy; only the converted WebPs in public/img/gallery are committed.
+/gallery-source/*
+!/gallery-source/alt.json
+!/gallery-source/README.md
