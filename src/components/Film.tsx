@@ -25,7 +25,7 @@ export default function Film() {
       <div className="over">
         <div className="wrap">
           <h1>
-            <span>Collection N°01</span>Borrowed Prints made Irreverent
+            <span>Currently: Collection N°01</span>Borrowed Prints made Irreverent
           </h1>
           <a className="label cta" href="#edit">Discover the edit</a>
         </div>

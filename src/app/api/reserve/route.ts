@@ -6,17 +6,21 @@ import { reservationEmail } from "@/lib/reservationEmail";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Sends one email per reservation to RESERVATION_TO_EMAIL with the article and the customer's email.
+// Sends one email per reservation to RESERVATION_TO_EMAIL with the article and the customer's name and email.
 export async function POST(req: Request) {
-  let body: { productId?: unknown; email?: unknown };
+  let body: { productId?: unknown; name?: unknown; email?: unknown };
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "invalid_body" }, { status: 400 });
   }
 
+  const name = typeof body.name === "string" ? body.name.trim() : "";
   const email = typeof body.email === "string" ? body.email.trim() : "";
   const product = typeof body.productId === "string" ? findProduct(body.productId) : undefined;
+  if (!name || name.length > 120) {
+    return NextResponse.json({ error: "invalid_name" }, { status: 400 });
+  }
   if (!EMAIL_RE.test(email) || email.length > 254) {
     return NextResponse.json({ error: "invalid_email" }, { status: 400 });
   }
@@ -47,7 +51,7 @@ export async function POST(req: Request) {
     const siteUrl = process.env.SITE_URL || (prod ? `https://${prod}` : new URL(req.url).origin);
     if (siteUrl.startsWith("https://")) imageSrc = new URL(`/img/email/${photo}`, siteUrl).href;
   }
-  const { subject, text, html } = reservationEmail({ product, email, imageSrc });
+  const { subject, text, html } = reservationEmail({ product, name, email, imageSrc });
 
   let res: Response;
   try {
