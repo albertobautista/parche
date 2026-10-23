@@ -23,11 +23,11 @@ const DESCRIPTION =
   "High Fashion, Hand Made. Borrowed Prints made Irreverent. One-of-one upcycled blazers and denim with vintage silk patches. Join the waitlist for Collection N°01.";
 // Share image for WhatsApp, Instagram, iMessage, X... Bump ?v= when the image changes so their caches refresh.
 const OG_IMAGE = {
-  url: "/og-image.jpg?v=1",
+  url: "/og-image.jpg?v=2",
   width: 1200,
   height: 630,
   type: "image/jpeg",
-  alt: "Parché Studio, Collection N°01: upcycled blazers with silk patches",
+  alt: "Parché Studio ṔS logo, Collection N°01: upcycled blazers with silk patches",
 };
 
 export const metadata: Metadata = {
