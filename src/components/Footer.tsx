@@ -1,3 +1,8 @@
+import MonogramLogo, { type MonogramVariant } from "./MonogramLogo";
+
+// Switch to "red" to preview the Clutch Red version of the monogram.
+const FOOTER_LOGO: MonogramVariant = "cream";
+
 export default function Footer() {
   return (
     <footer>
@@ -16,6 +21,7 @@ export default function Footer() {
         <div>
           <h4 className="label">The Waitlist</h4>
           <p>A single letter when your piece is ready. Nothing more.</p>
+          <MonogramLogo variant={FOOTER_LOGO} className="footer-monogram" />
         </div>
         <div>
           <h4 className="label">Correspondence</h4>
