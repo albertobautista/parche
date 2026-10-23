@@ -13,20 +13,20 @@ const JSON_LD = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://parche-studio.com/#organization",
+      "@id": "https://www.parche-studio.com/#organization",
       name: "Parché Studio",
-      url: "https://parche-studio.com/",
-      logo: "https://parche-studio.com/icon.png",
-      image: "https://parche-studio.com/og-image.jpg",
+      url: "https://www.parche-studio.com/",
+      logo: "https://www.parche-studio.com/icon.png",
+      image: "https://www.parche-studio.com/og-image.jpg",
       slogan: "High Fashion, Hand Made. Borrowed Prints made Irreverent.",
     },
     {
       "@type": "WebSite",
-      "@id": "https://parche-studio.com/#website",
+      "@id": "https://www.parche-studio.com/#website",
       name: "Parché Studio",
-      url: "https://parche-studio.com/",
+      url: "https://www.parche-studio.com/",
       inLanguage: "en",
-      publisher: { "@id": "https://parche-studio.com/#organization" },
+      publisher: { "@id": "https://www.parche-studio.com/#organization" },
     },
   ],
 };

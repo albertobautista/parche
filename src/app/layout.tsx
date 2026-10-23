@@ -17,13 +17,13 @@ const cedarville = Cedarville_Cursive({
   display: "swap",
 });
 
-const SITE_URL = "https://parche-studio.com";
+const SITE_URL = "https://www.parche-studio.com";
 const TITLE = "Parché Studio · High Fashion, Hand Made";
 const DESCRIPTION =
   "High Fashion, Hand Made. Borrowed Prints made Irreverent. One-of-one upcycled blazers and denim with vintage silk patches. Join the waitlist for Collection N°01.";
-// Share image for WhatsApp, Instagram, iMessage, X... Bump ?v= when the image changes so their caches refresh.
+// Share image for WhatsApp, Instagram, iMessage, X... Bump ?v= when the image changes so their caches refresh. Keep the www host: the bare domain redirects there and Facebook/WhatsApp reject an og:image behind a redirect.
 const OG_IMAGE = {
-  url: "/og-image.jpg?v=2",
+  url: "/og-image.jpg?v=3",
   width: 1200,
   height: 630,
   type: "image/jpeg",
