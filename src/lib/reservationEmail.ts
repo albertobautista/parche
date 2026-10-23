@@ -20,11 +20,13 @@ function formatDate(d: Date) {
 
 export function reservationEmail({
   product,
+  name: customer,
   email,
   imageSrc,
   date = new Date(),
 }: {
   product: Product;
+  name: string;
   email: string;
   // Photo of the piece (public/img/email/<id>.jpg, a light JPEG every mail client can show):
   // a cid: reference to the inline attachment, or an https URL. Left out when neither is available.
@@ -32,6 +34,7 @@ export function reservationEmail({
   date?: Date;
 }) {
   const name = escapeHtml(product.name);
+  const who = escapeHtml(customer);
   const mail = escapeHtml(email);
   const mailto = escapeHtml(
     `mailto:${encodeURIComponent(email)}?subject=${encodeURIComponent(`Tu reserva de ${product.name} · Parché Studio`)}`,
@@ -47,6 +50,7 @@ export function reservationEmail({
     "",
     `Artículo: ${product.name}`,
     `Precio: €${product.price}`,
+    `Nombre: ${customer}`,
     `Cliente: ${email}`,
     `Fecha: ${formatDate(date)}`,
     "",
@@ -65,7 +69,7 @@ export function reservationEmail({
 <title>${escapeHtml(subject)}</title>
 </head>
 <body style="margin:0;padding:0;background:${BONE};color:${INK};">
-<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${name} · ${mail}</div>
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${name} · ${who} · ${mail}</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:${BONE};">
   <tr><td align="center" style="padding:32px 16px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
@@ -88,6 +92,10 @@ export function reservationEmail({
       }
       <tr><td style="background:#FFFFFF;padding:28px 36px 8px;">
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td style="padding:16px 0;border-top:1px solid ${LINE};${label}color:${MUTE};" width="110">Nombre</td>
+            <td style="padding:16px 0;border-top:1px solid ${LINE};font-family:${SANS};font-size:15px;color:${INK};">${who}</td>
+          </tr>
           <tr>
             <td style="padding:16px 0;border-top:1px solid ${LINE};${label}color:${MUTE};" width="110">Cliente</td>
             <td style="padding:16px 0;border-top:1px solid ${LINE};font-family:${SANS};font-size:15px;color:${INK};word-break:break-all;"><a href="${mailto}" style="color:${INK};text-decoration:underline;">${mail}</a></td>

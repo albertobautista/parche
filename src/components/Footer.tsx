@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
         <div className="legal label">
           <span>© 2026 Parché Studio</span>
-          <span>Collection N°01</span>
+          <span>Currently: Collection N°01</span>
         </div>
       </div>
     </footer>
