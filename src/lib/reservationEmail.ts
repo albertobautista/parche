@@ -51,7 +51,7 @@ export function reservationEmail({
     `Artículo: ${product.name}`,
     `Precio: €${product.price}`,
     `Nombre: ${customer}`,
-    `Cliente: ${email}`,
+    `Correo: ${email}`,
     `Fecha: ${formatDate(date)}`,
     "",
     "Responde a este correo para escribir directamente al cliente.",
@@ -97,7 +97,7 @@ export function reservationEmail({
             <td style="padding:16px 0;border-top:1px solid ${LINE};font-family:${SANS};font-size:15px;color:${INK};">${who}</td>
           </tr>
           <tr>
-            <td style="padding:16px 0;border-top:1px solid ${LINE};${label}color:${MUTE};" width="110">Cliente</td>
+            <td style="padding:16px 0;border-top:1px solid ${LINE};${label}color:${MUTE};" width="110">Correo</td>
             <td style="padding:16px 0;border-top:1px solid ${LINE};font-family:${SANS};font-size:15px;color:${INK};word-break:break-all;"><a href="${mailto}" style="color:${INK};text-decoration:underline;">${mail}</a></td>
           </tr>
           <tr>
