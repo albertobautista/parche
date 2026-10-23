@@ -70,8 +70,8 @@ a { color: inherit; }
 .st-copy { grid-column: 5 / -1; margin-top: clamp(30px, 4vw, 70px); }
 .st-lead { display: flex; align-items: center; gap: 22px; margin: 0 0 clamp(26px, 2.6vw, 38px); font-size: 11px; letter-spacing: .32em; text-transform: uppercase; color: var(--ink); }
 .st-lead::before { content: ""; flex: none; width: 56px; height: 1px; background: repeating-linear-gradient(to right, var(--red) 0 7px, transparent 7px 12px); }
-.statement p.st-body { margin: 0; columns: 2; column-gap: clamp(32px, 4vw, 64px); font-size: 14.5px; letter-spacing: .03em; line-height: 1.95; color: var(--mute); }
-@media (max-width: 900px) { .st-head { grid-column: 1 / -1; } .st-copy { grid-column: 3 / -1; } .statement p.st-body { columns: 1; max-width: 60ch; } }
+.statement p.st-body { margin: 0; max-width: 860px; font-size: clamp(14.5px, 1.05vw, 17px); letter-spacing: .03em; line-height: 1.95; color: var(--mute); }
+@media (max-width: 900px) { .st-head { grid-column: 1 / -1; } .st-copy { grid-column: 3 / -1; } .statement p.st-body { max-width: 60ch; } }
 @media (max-width: 760px) { .st-copy { grid-column: 1 / -1; margin-left: 12%; } .statement h2 { font-size: 21px; letter-spacing: .1em; } }
 
 /* The Edit */
@@ -80,6 +80,9 @@ a { color: inherit; }
 .edit-head h2 { margin: 12px 0 0; font-family: var(--couture); font-weight: 300; text-transform: uppercase; letter-spacing: .12em; font-size: clamp(26px, 3vw, 42px); line-height: 1.1; }
 .edit-head .label:first-child { color: var(--red); }
 .edit-head p { margin: 0; max-width: 40ch; color: var(--mute); }
+.edit-head .edit-note { max-width: 520px; padding-left: clamp(22px, 2.4vw, 36px); border-left: 1px solid var(--ink); font-size: 14.5px; line-height: 1.9; letter-spacing: .02em; color: var(--ink); }
+.edit-note .en-big { display: block; margin-bottom: 14px; font-family: var(--couture); font-weight: 300; font-size: clamp(19px, 1.7vw, 25px); line-height: 1.45; letter-spacing: .01em; }
+@media (max-width: 760px) { .edit-head .edit-note { margin-top: 18px; } }
 .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(80px, 9vw, 130px) clamp(16px, 2vw, 28px); }
 .look { grid-column: span 4; min-width: 0; }
 .look:nth-child(-n+2) { grid-column: span 6; }

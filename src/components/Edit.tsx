@@ -10,9 +10,12 @@ export default function Edit() {
             <div className="label">The Edit · Waitlist</div>
             <h2>One of One</h2>
           </div>
-          <p>
-            Each name below is a fit: the garment, and the way its patch is
-            placed. The print changes with every piece, and each one is made
+          <p className="edit-note">
+            <span className="en-big">
+              Each name below is a fit: the garment, and the way its patch is
+              placed.
+            </span>{" "}
+            The print changes with every piece, and each one is made
             once. Leave your email beneath the fit you want, and receive the
             catalogue of every piece available in it, before anyone else.
           </p>
