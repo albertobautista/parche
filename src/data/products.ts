@@ -23,7 +23,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "short-notice",
     name: "Short Notice",
-    price: 195,
+    price: 205,
     img: "/img/short-notice-1.webp",
     img2: "/img/short-notice-2.webp",
     desc: "A cropped blazer with one patch set at the chest.",
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "two-faced",
     name: "Two Faced",
-    price: 165,
+    price: 175,
     img: "/img/two-faced-1.webp",
     img2: "/img/two-faced-2.webp",
     desc: "Denim with both back pockets patched, and a line embroidered in red at the waist.",
@@ -47,7 +47,7 @@ export const PRODUCTS: Product[] = [
   {
     id: "talk-back",
     name: "Talk Back",
-    price: 145,
+    price: 155,
     img: "/img/talk-back-1.webp",
     img2: "/img/talk-back-2.webp",
     desc: "Denim with one patched back pocket, and a line embroidered in red at the waist.",
